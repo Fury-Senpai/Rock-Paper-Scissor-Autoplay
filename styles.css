@@ -40,8 +40,18 @@ body {
     width: 100px;
     font-size: 20px;
     cursor: pointer;
+    background-color: greenyellow;
+    border: none;
   }
   
+  .js-autoplay-on{
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+  }
   .autoplay-container {
     margin-top: 20px;
   }

@@ -37,6 +37,7 @@ function getRandomNumber(min, max) {
     ).innerHTML = `Win: ${score.win} | Lose: ${score.loose} | Tie: ${score.tie}`;
   }
   
+
   function playGame(playerMove) {
     const randomNumber = getRandomNumber(0, 2);
     const moves = ["rock", "paper", "scissors"];
@@ -58,12 +59,6 @@ function getRandomNumber(min, max) {
       result = "You Lost";
       score.loose++;
     }
-
-    function autoplay(){
-        setTimeout(function(){
-            
-        })
-    }
   
     localStorage.setItem("score", JSON.stringify(score));
     updateScore();
@@ -72,4 +67,25 @@ function getRandomNumber(min, max) {
       ".js-res"
     ).innerHTML = `<h1>${result}</h1> You: <img src="./images/${playerMove}-emoji.png" class="res-img"> Computer: <img src="./images/${computerMove}-emoji.png" class="res-img">`;
   }
-  
+
+
+  //Autoplay feature
+  let intervalId;
+  let isAutoplay = false;
+  function autoplay(){
+    if(!isAutoplay){
+        intervalId = setInterval(()=>{
+            const randomIndex = getRandomNumber(0, 2);
+            const moves = ["rock", "paper", "scissors"];
+            const playerMove = moves[randomIndex];
+            playGame(playerMove);
+        },1000);
+        isAutoplay = true;
+        document.querySelector('.js-autoplay').classList.add('js-autoplay-on');
+    }
+    else{
+        clearInterval(intervalId);
+        document.querySelector('.js-autoplay').classList.remove('js-autoplay-on');
+    }
+    
+  };
