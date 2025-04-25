@@ -1,0 +1,48 @@
+body {
+    background-color: black;
+    color: azure;
+    font-family: Arial;
+    text-align: center;
+  }
+  
+  .move-btn {
+    background-color: transparent;
+    border-radius: 100px;
+    margin: 10px;
+    border: 2px solid white;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  .move-img {
+    height: 100px;
+    padding: 40px;
+  }
+  
+  .res-img {
+    height: 50px;
+    padding: 20px;
+  }
+  
+  .reset-btn {
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .reset-container {
+    margin-top: 20px;
+  }
+  .autoplay {
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .autoplay-container {
+    margin-top: 20px;
+  }
+  
